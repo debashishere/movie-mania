@@ -1,0 +1,47 @@
+{{!-- preloader --}}
+{{>preload}}
+{{!-- preloader end --}}
+{{>navbar}}
+<div class="body-container">
+    <div class="banner-container">
+        <div class="new-banner-content">
+            <div class="banner-content">
+                <h2>Movies in a click</h2>
+                <p>THE PERFECT PLACE FOR DISCOVERING MOVIES</p>
+            </div>
+            <div class="create-container">
+                <p><span>C</span>reate your <span>F</span>avorite <span></span>Movies List</p>
+            </div>
+            <div class="banner-btn">
+                <form action="/account/register" method="get">
+                    <button type="submit" id="signup-btn">Sign up</button>
+                </form>
+                <form action="/account/login" method="get">
+                    <button type="submit" id="login-btn">login</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="body-content">
+        <div class="call-text">
+            <h3>Be the first to see the first-run movie!</h3>
+            <p>Explore Unlimited Movies</p>
+            <a href="/explore">Explore Now</a>
+        </div>
+        <div class="now-playing-container">
+            <div class="now-playing-title">
+                <h1>Great chance to gather with friends.</h1>
+                <h2>What's new?</h2>
+            </div>
+            <div class="now-playing-content">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{{>footer}}
+<script src='js/home.js'></script>

@@ -1,0 +1,13 @@
+{{#if errors}}
+{{#each errors}}
+<p>{{this.msg}}</p>
+{{/each}}
+{{/if}}
+
+{{#if success_msg}}
+<p>{{success_msg}}</p>
+{{/if}}
+
+{{#if error_msg}}
+<p>{{error_msg}}</p>
+{{/if}}

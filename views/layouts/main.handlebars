@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- show nav --}}
+    {{#if navbar}}
+    <link rel="stylesheet" href="/css/navbar.css">
+    {{/if}}
+
+    {{!-- show footer --}}
+    {{#if footer}}
+    <link rel="stylesheet" href="/css/footer.css">
+    {{/if}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/{{ style }}">
+    <link rel="stylesheet" href="css/preload.css" />
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    {{{ body }}}
+</body>
+
+</html>

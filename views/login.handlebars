@@ -1,0 +1,35 @@
+<div class="main-container">
+    {{>navbar}}
+    <div class="login-container">
+        <div class="login-content">
+            <div class="errors">
+                {{# if messages.error}}
+                <p>{{ messages.error }}</p>
+                {{/if}}
+                {{>messages}}
+            </div>
+            {{!-- login form --}}
+            <form action="/account/login" method="POST">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <div class="register">
+                <p>Don't have an account?</p>
+                <a href="/account/register">Register</a>
+            </div>
+
+
+        </div>
+    </div>
+    {{>footer}}
+
+</div>

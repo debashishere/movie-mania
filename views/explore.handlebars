@@ -1,0 +1,40 @@
+{{>preload}}
+{{>navbar}}
+
+<div class='hero-container'>
+    <div class="hero-content">
+        <!-- Search -->
+        <div class="search-container">
+            <form>
+                <input type="text" id='search-input' placeholder='Enter movie name'></input>
+                <button type="button" id='search-btn'>Search</button>
+            </form>
+        </div>
+
+        <!-- Search result -->
+        <div class="movie-section">
+        </div>
+        <div class="movie-video">
+            {{!-- <span id='close-video'>&times;</span> --}}
+        </div>
+
+
+        <div class="upcoming-container">
+        </div>
+        <div class="movie-video"></div>
+
+        <div class="popular-container">
+        </div>
+        <div class="movie-video"></div>
+
+        <div class="top-container">
+        </div>
+        <div class="movie-video"></div>
+
+    </div>
+    {{>footer}}
+</div>
+
+<script src="js/loadVideo.js"></script>
+<script src="js/apiTransaction.js"></script>
+<script src="js/explore.js"></script>

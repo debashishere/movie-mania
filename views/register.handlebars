@@ -1,0 +1,38 @@
+<div class="main-container">
+    {{>navbar}}
+    <div class="register-container">
+        <div class="register-content">
+            <h1>Register for Free</h1>
+            <div class="errors">
+                {{>messages}}
+            </div>
+            {{!-- register form --}}
+            <form action="/account/register" method="POST">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" {{#if name}} value="{{name}}" {{/if}} required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" {{#if email}} value="{{email}}" {{/if}} required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label for="password2">Confrom-password</label>
+                    <input type="password" id="password2" name="password2" required>
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+            <div class="login">
+                <p>All ready have an account?</p>
+                <a href="/account/login">Login</a>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</div>
