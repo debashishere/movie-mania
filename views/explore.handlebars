@@ -14,25 +14,26 @@
         <!-- Search result -->
         <div class="movie-section">
         </div>
-        <div class="movie-video">
-            {{!-- <span id='close-video'>&times;</span> --}}
-        </div>
-
-
         <div class="upcoming-container">
         </div>
-        <div class="movie-video"></div>
-
         <div class="popular-container">
         </div>
-        <div class="movie-video"></div>
-
         <div class="top-container">
         </div>
-        <div class="movie-video"></div>
 
+        {{!-- popup overlay --}}
+        <div id="overlay"></div>
+
+        {{!-- popup modal --}}
+        <div id="modal_container">
+            <div id="modal_content">
+                <div class="video-container"></div>
+            </div>
+        </div>
     </div>
-    {{>footer}}
+
+</div>
+{{>footer}}
 </div>
 
 <script src="js/loadVideo.js"></script>

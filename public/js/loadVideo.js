@@ -23,7 +23,7 @@ function createVideoTemplate(data, videoContainer, showCloseBtn) {
     //display movie video
     //close btn
     if (showCloseBtn) {
-        videoContainer.innerHTML = `<button type="button" id = "close-video-btn">X</button>` // close btn
+        videoContainer.innerHTML = `<button type="button" id = "close_video_btn">X</button>` // close btn
     }
     const videos = data.results;
     const length = videos.length > 4 ? 4 : videos.length;
@@ -34,14 +34,20 @@ function createVideoTemplate(data, videoContainer, showCloseBtn) {
         iframeContainer.appendChild(iframe);
         videoContainer.appendChild(iframeContainer)
     }
+
+    const closeModal = document.getElementById('close_video_btn')
+    closeModal.onclick = function () {
+        overlay.classList.remove('active');
+        modalContainer.classList.remove('active');
+    }
 }
 
 // create iframe
 function createIframe(video) {
     const iframe = document.createElement('iframe');
     iframe.src = `https://www.youtube.com/embed/${video.key}`;
-    iframe.width = 360;
-    iframe.height = 315;
+    iframe.width = 200;
+    iframe.height = 200;
     iframe.allowFullscreen = true;
     return iframe;
 }

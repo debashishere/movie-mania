@@ -1,5 +1,9 @@
 <header>
-    <a href="#" class="logo"><i class="fas fa-play"></i></a>
+    <div class="nav_left">
+        <a href="#" class="logo"><i class="fas fa-play"></i></a>
+        <h2>Movie Mania</h2>
+    </div>
+
     <div class="menuToggle" onclick="toggleMenu();"></div>
     <ul class="navigation">
         <li><a href="/">Home</a></li>
@@ -8,10 +12,8 @@
         <li><a href="/about">About</a></li>
     </ul>
 </header>
-
-<script src="./js/navbar.js" async defer></script>
-
-
+<div id="nav_overlay"></div>
+<script src="/js/navbar.js" async defer></script>
 
 
 
@@ -22,7 +24,9 @@
 
 
 
-{{!-- 
+
+
+{{!--
 <nav>
     <div class="nav-left">
         <span class="logo"><i class="fas fa-play"></i></span>

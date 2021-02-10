@@ -10,9 +10,13 @@ const upcomingContainer = document.querySelector('.upcoming-container');
 const popularContainer = document.querySelector('.popular-container');
 const topContainer = document.querySelector('.top-container');
 
+const overlay = document.getElementById('overlay');
+const modalContainer = document.getElementById('modal_container');
+const modalContent = document.getElementById('modal_content');
 
 function renderSearchMovie(data) {
     movieSection.innerHTML = ''
+    movieSection.style.marginTop = "50px";
     const movieBlock = createMovieContainer(data);
     movieSection.appendChild(movieBlock);
 }
@@ -85,35 +89,26 @@ function filterData(item) {
 
 // toggle video section on click
 document.onclick = function (event) {
-    const target = event.target;
 
+    const target = event.target;
     // target fevorite icon
     if (target.classList[0] == 'fas') {
         getMovieCard(target)
     }
 
-
     if (target.tagName.toLowerCase() === 'img') {
-        // extract data-set value
         const movieId = target.dataset.movieId;
-
-        // select movie-video div
-        const imgContainer = event.target.parentElement;
-        const movieItem = imgContainer.parentElement;
-        const movieContainer = movieItem.parentElement;
-        const movieSection = movieContainer.parentElement;
-        const movieVideo = movieSection.nextElementSibling;
-        movieVideo.classList.add('video-display');
-
+        overlay.classList.add('active');
+        modalContainer.classList.add('active');
         // fetch video
         const showCloseBtn = true;
-        getVideos(movieId, movieVideo, showCloseBtn)
+        getVideos(movieId, modalContent, showCloseBtn)
     }
-
     if (target.id === 'close-video-btn') {
         const movieVideo = target.parentElement;
         movieVideo.classList.remove('video-display')
     }
+
 }
 
 // get movie card data to db
@@ -193,13 +188,11 @@ function slider(movieContainer) {
         if (!isDown) return;
         event.preventDefault();
         const x = event.pageX - movieContainer.offsetLeft;
-        const slide = (x - startX) * 2.3;
+        const slide = (x - startX) * 3.5;
         movieContainer.scrollLeft = scrollLeft - slide;
     })
 }
 
-// default serach when page load first time
-searchMovie('spiderman');
 
 getUpcomingMovie();
 

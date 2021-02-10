@@ -39,7 +39,7 @@ function createTemplate(data) {
         <div class='details-container'>
             <div class="details-content">
                 <p>${movies[i].title}</p>
-                <p>Release Date: ${movies[i].release_date}</p>
+                <p>Release Date:<span> ${movies[i].release_date}</span></p>
             </div>
         </div>
         

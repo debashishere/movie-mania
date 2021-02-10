@@ -3,12 +3,6 @@ const API_KEY = '86f9a380ffae3c355aa19faaf111a15a'
 const url = 'https://api.themoviedb.org/3/search/movie?api_key=86f9a380ffae3c355aa19faaf111a15a'
 
 
-// // generate url
-// function generateUrl(path) {
-//     const url = `https://api.themoviedb.org/3${path}?api_key=86f9a380ffae3c355aa19faaf111a15a`
-//     return url;
-// }
-
 // request movie
 function requestMovie(url, onComplete, onError) {
     fetch(url)
