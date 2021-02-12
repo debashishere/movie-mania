@@ -1,9 +1,9 @@
 const path = require('path');
-
 const env = process.env.NODE_ENV || 'development';
 if (env == 'development') {
     require('dotenv').config({ path: path.resolve(__dirname, './config/config.env') });
 }
+
 const express = require("express");
 const home = require('./routes/home');
 const bodyParser = require('body-parser');
@@ -12,8 +12,11 @@ const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const initializePassport = require('./config/passport-config');
+const logger = require('morgan');
 
 const app = express();
+
+app.use(logger('dev'));
 
 initializePassport(passport);
 

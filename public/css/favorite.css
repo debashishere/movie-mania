@@ -213,6 +213,7 @@ body {
 .overlay-active {
     opacity: 1;
     pointer-events: all;
+    z-index: 20;
 }
 
 .modal-container {
@@ -222,13 +223,14 @@ body {
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
-    z-index: 200;
+    border-radius: 8px;
     width: 90%;
     height: auto;
     max-width: 90%;
     background-color: #d9e4dd;
     overflow-y: scroll;
     max-height: 100%;
+    z-index: 30;
 }
 
 .modal-active {
@@ -245,16 +247,7 @@ body {
     flex-direction: column;
 }
 
-#modal-close {
-    width: 2.5rem;
-    height: 2.4rem;
-    font-size: 2rem;
-    border-radius: 50%;
-    color: red;
-    background-color: #fff;
-    border: none;
-    outline: none;
-}
+
 
 #modal-close:hover {
     color: white;
@@ -265,14 +258,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.5rem;
-    height: 2.4rem;
     margin: 0.5rem auto;
     font-size: 2rem;
     background-color: white;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
+}
+
+.close-container button {
+    text-decoration: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    color: red;
+    background-color: #acacac;
+    border: none;
+    outline: none;
 }
 
 .close-container:hover {

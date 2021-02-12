@@ -144,16 +144,12 @@ function postMovieCard(imagePath, movieId, title, year) {
         body: JSON.stringify(data),
     })
         .then((res) => {
-            if (res.status === 403) {
-                console.log('LOGIN REQUIRED')
+
+            if (res.status == 200) {
+                //created
             }
-            else {
-                (res) => res.json()
-            }
-        })
-        .then((data) => {
-            if (data === 1) {                          //TODO:- turn fev logo red
-                showAlert('Added to fevorite')
+            else if (res.status == 401) {
+                console.log("unauthenticated")
             }
         })
         .catch(err => console.log(err))

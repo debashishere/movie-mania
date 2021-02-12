@@ -58,15 +58,25 @@ module.exports = {
 
     },
 
-    renderRegisterPage: (res) => {
-
-        res.render('register', {
-            title: 'Register',
-            style: 'register.css',
-            navbar: true,
-            footer: true
-        })
-
-    },
-
+    renderRegisterPage: (res, data = null) => {
+        if (data) {
+            res.render('register', {
+                errors: data.errors,
+                name: data.name,
+                email: data.email,
+                title: 'Register',
+                style: 'register.css',
+                navbar: true,
+                footer: true
+            })
+        }
+        else {
+            res.render('register', {
+                title: 'Register',
+                style: 'register.css',
+                navbar: true,
+                footer: true
+            })
+        }
+    }
 }

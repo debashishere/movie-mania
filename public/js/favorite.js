@@ -8,6 +8,7 @@ logoutBtn.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
+
 document.onclick = function (event) {
     const target = event.target;
 
@@ -40,14 +41,20 @@ function removeFavorite(movieId) {
         },
         body: JSON.stringify(data),
     })
-        .then(res => res.json())
-        .then(data => {
-            if (data.status) {
+        .then(res => {
+            if (res.status == 200) {
                 // reload page after deletion
+                //remove without redirect
                 window.location.reload();
             }
+            else {
+                // unable to delete
+            }
         })
-        .catch(err => console.log(err))
+        .catch(err =>
+            console.log(err)
+            // unable to delete
+        )
 }
 
 
@@ -63,7 +70,8 @@ function exploreFavorite(movieId) {
 
 // close popup modal
 modalClose.onclick = function (e) {
-    e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation()
     overlay.classList.remove('overlay-active');
     modalContainer.classList.remove('modal-active');
 }
