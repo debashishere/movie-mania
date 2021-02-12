@@ -82,3 +82,41 @@ function showReviews(movieId) {
     getReviews(movieId, reviewContainer);
 }
 
+// reviews 
+
+function getReviews(movieId, reviewContainer) {
+
+    const path = `/api/movie/${movieId}/reviews`;
+    const url = generateUrl(path);
+    fetch(url)
+        .then(res => res.json())
+        .then(data => createReviewTemplate(data, reviewContainer))
+        .catch(err => console.log(err))
+}
+
+function createReviewTemplate(data, reviewContainer) {
+    const reviews = data.results;
+
+    // pick top 3 reviews
+    const length = reviews.length > 3 ? 3 : reviews.length
+    if (length == 0) {
+        reviewContainer.innerHTML = '<h1>Reviews</h1> <p style="text-align: center" >No reviews available</p>';
+    }
+    else {
+        reviewContainer.innerHTML = '<h1>Reviews</h1>';
+    }
+
+    for (i = 0; i < length; i++) {
+        const element = document.createElement('div');
+        element.classList.add('review-item')
+        element.innerHTML = `
+        <div class="review-author">
+            <p><span>Author :</span> ${reviews[i].author} </p>
+        </div>
+        <div class="review-content">
+        <p>${reviews[i].content}</p>
+            </div>
+        `;
+        reviewContainer.appendChild(element);
+    }
+}
