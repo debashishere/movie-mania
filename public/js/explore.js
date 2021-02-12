@@ -42,8 +42,7 @@ searchBtn.onclick = function (event) {
 }
 
 // create movie cards
-function createMovieContainer(data) {
-    const movie = data.results;
+function createMovieContainer(movie) {
     const movieContainer = document.createElement('div');
     movieContainer.setAttribute('class', 'movie-container');
     movie.forEach((item) => {

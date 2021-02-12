@@ -6,6 +6,7 @@ if (env == 'development') {
 
 const express = require("express");
 const home = require('./routes/home');
+const api = require('./routes/api');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const flash = require('express-flash');
@@ -69,6 +70,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 //******---------------ROUTES----------------*******
 app.use('/', home);
+app.use('/api', api)
 
 const port = process.env.port || 3000
 app.listen(port, (err) => {

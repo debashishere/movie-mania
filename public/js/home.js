@@ -3,30 +3,33 @@
 //********---------------Content---------------**************
 const nowPlayingContent = document.querySelector('.now-playing-content');
 const posterPrefix = 'https://image.tmdb.org/t/p/w500'
+const baseUrl = `http://localhost:3000`
 
 // generate url
 function generateUrl(path) {
-    const url = `https://api.themoviedb.org/3${path}?api_key=86f9a380ffae3c355aa19faaf111a15a`
+    const url = baseUrl + path;
     return url;
 }
 
 
 // request now playing 
 function getNowPlaying(onComplete, onError) {
-    const path = '/movie/now_playing';
+    const path = '/api/movie/now_playing';
     const url = generateUrl(path);
     fetch(url)
         .then((res) => res.json())
-        .then(onComplete)
+        .then(data => {
+            onComplete(data);
+        })
         .catch(onError)
 }
 
 
 // on complete
 // render view
-function createTemplate(data) {
-    const movies = data.results;
-    const length = movies.length > 4 ? 4 : movies.length;
+function createTemplate(movies) {
+    // const movies = data.results;
+    const length = movies.length
 
     for (i = 0; i < length; i++) {
         const element = document.createElement('div');
