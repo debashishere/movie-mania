@@ -178,10 +178,6 @@ header.sticky .navigation li a:hover {
         border-radius: 0;
     }
 
-    header .navigation li:hover {}
-
-    header .navigation li:hover a {}
-
     header .navigation li:not(:first-child) {
         margin-top: 10px;
     }

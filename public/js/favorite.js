@@ -2,6 +2,8 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-container');
 const videoContainer = document.querySelector('.video-container');
 const modalClose = document.getElementById('modal-close');
+const baseUrl = `https://fav-movie-mania.herokuapp.com`
+
 
 const logoutBtn = document.getElementById('logout-btn');
 logoutBtn.addEventListener('click', (event) => {
@@ -33,7 +35,7 @@ function removeFavorite(movieId) {
         movieId: movieId
     }
 
-    const url = 'http://localhost:3000/favorite'
+    const url = baseUrl + '/favorite'
     fetch(url, {
         method: 'delete',
         headers: {
@@ -89,13 +91,9 @@ function getReviews(movieId, reviewContainer) {
     fetch(url)
         .then(res => res.json())
         .then(data => createReviewTemplate(data, reviewContainer))
-<<<<<<< HEAD
-        .catch(err => console.log(err))
-=======
         .catch(err => {
             //  console.log(err)
         })
->>>>>>> secureapi
 }
 
 function createReviewTemplate(data, reviewContainer) {

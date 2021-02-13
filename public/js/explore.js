@@ -13,6 +13,7 @@ const modalContent = document.getElementById('modal_content');
 const alert = document.getElementById('alert');
 
 const posterPrefix = 'https://image.tmdb.org/t/p/w500'
+const baseUrl = `https://fav-movie-mania.herokuapp.com`
 
 function renderSearchMovie(data) {
     movieSection.innerHTML = ''
@@ -56,17 +57,13 @@ searchBtn.onclick = function (event) {
 
 // create movie cards
 function createMovieContainer(movie) {
-<<<<<<< HEAD
-=======
 
->>>>>>> secureapi
     const movieContainer = document.createElement('div');
     movieContainer.setAttribute('class', 'movie-container');
     movie.forEach((item) => {
         if (item.poster_path) {
             posterUrl = posterPrefix + item.poster_path;
         }
-
         const newItem = filterData(item);
         const movieElement = document.createElement('div');
         movieElement.setAttribute('class', 'movie-item');
@@ -155,7 +152,7 @@ function postMovieCard(imagePath, movieId, title, year) {
         title: title,
         year: year
     }
-    const url = 'http://localhost:3000/favorite';
+    const url = baseUrl + '/favorite';
     fetch(url, {
         method: 'post',
         headers: {

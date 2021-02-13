@@ -1,5 +1,3 @@
-const baseUrl = `http://localhost:3000`
-
 function generateUrl(path) {
     const url = baseUrl + `${path}`
     return url;

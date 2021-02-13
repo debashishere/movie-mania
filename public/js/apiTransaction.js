@@ -6,13 +6,9 @@ function requestMovie(url, onComplete, handleAlert) {
         .then(data => {
             onComplete(data)
         })
-<<<<<<< HEAD
-        .catch(onError)
-=======
         .catch(err => {
             handleAlert("Error Please Refresh!!", "danger")
         })
->>>>>>> secureapi
 }
 
 //search movie
