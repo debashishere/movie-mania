@@ -3,7 +3,7 @@
 //********---------------Content---------------**************
 const nowPlayingContent = document.querySelector('.now-playing-content');
 const posterPrefix = 'https://image.tmdb.org/t/p/w500'
-const baseUrl = `http://localhost:3000`
+const baseUrl = `https://fav-movie-mania.herokuapp.com`
 
 // generate url
 function generateUrl(path) {
