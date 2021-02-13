@@ -16,11 +16,12 @@
     <div class="body-content">
         <div class="call-text">
             <p>Create your Favorite Movies List</p>
+            {{#unless user}}
             <div class="account_btn">
                 <a class="sign_up" href="/account/register">Sign up</a>
                 <a class="log_in" href="/account/login">Log in</a>
             </div>
-
+            {{/unless}}
         </div>
         <div class="now-playing-container">
             <div class="now_playing_title">

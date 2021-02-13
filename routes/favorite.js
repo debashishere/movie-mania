@@ -12,8 +12,7 @@ router
         try {
             const userId = parseInt(req.user.id)
             const favorites = await getFavorites(userId);
-            const userName = req.user.name
-            renderFavorite(favorites, userName, res);
+            renderFavorite(favorites, res);
         }
 
         catch (err) {

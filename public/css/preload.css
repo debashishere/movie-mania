@@ -1,5 +1,5 @@
 /* preloader */
-.preload{
+.preload {
     position: fixed;
     top: 0;
     width: 100%;
@@ -7,42 +7,50 @@
     background-color: #77b3d4;
     display: flex;
     justify-content: center;
-    align-items: center; 
-     transform: all 0.5s ease;
-     z-index: 1000;
+    align-items: center;
+    transform: all 0.5s ease;
+    z-index: 1000;
 }
-.preload-finish{
+
+.preload-finish {
     opacity: 0;
     pointer-events: none;
 }
-.cloud1, 
-.cloud2, 
-.cloud3{
+
+.cloud1,
+.cloud2,
+.cloud3 {
     height: 100px;
     position: absolute;
     right: 0%;
     z-index: 500;
 }
-.cloud1{
+
+.cloud1 {
     top: 25%;
     transform: translate(100%, -25%);
     animation: clouds 3s ease infinite;
 }
-.cloud2{
+
+.cloud2 {
     top: 50%;
     transform: translate(100%, -50%);
     animation: clouds 3s ease infinite 2s;
 }
-.cloud3{
+
+.cloud3 {
     top: 75%;
     transform: translate(100%, -75%);
     animation: clouds 3s ease infinite 1.5s;
 }
-.airplane{
+
+.airplane {
     height: 200px;
     animation: airplane 1s ease infinite alternate;
+    z-index: 1000;
 }
-.preload h4{
+
+.preload h4 {
     position: absolute;
     top: 75%;
     transform: translateY(-75%);
@@ -50,21 +58,24 @@
     font-size: 30px;
     font-family: sans-serif;
 }
-@keyframes airplane{
-    from{
+
+@keyframes airplane {
+    from {
         transform: translateY(0px);
 
     }
-    to{
-        transform: translateY(50px); 
+
+    to {
+        transform: translateY(50px);
     }
 }
 
-@keyframes clouds{
-    from{
+@keyframes clouds {
+    from {
         right: 0%;
     }
-    to{
+
+    to {
         right: 130%;
     }
 }

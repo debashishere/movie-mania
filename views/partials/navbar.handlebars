@@ -1,18 +1,31 @@
 <header>
     <div class="nav_left">
-        <a href="#" class="logo"><i class="fas fa-play"></i></a>
+        <a href="/" class="logo"><i class="fas fa-play"></i></a>
         <h2>Movie Mania</h2>
     </div>
 
-    <div class="menuToggle" onclick="toggleMenu();"></div>
-    <ul class="navigation">
-        <li><a href="/">Home</a></li>
-        <li><a href="/explore">Explore</a></li>
-        <li><a href="/favorite">Favourite</a></li>
-        <li><a href="/about">About</a></li>
-    </ul>
+    <div class="nav_right">
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <ul class="navigation">
+            <li><a href="/">Home</a></li>
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="/favorite">Favourite</a></li>
+            <li><a href="/about">About</a></li>
+            {{#if user}}
+            <li class="logout_link">
+                <form action="/account/logout?_method=DELETE" method="POST">
+                    <button type="submit" id="logout-btn">Log out</button>
+                </form>
+            </li>
+            {{/if}}
+        </ul>
+
+    </div>
+
+
 </header>
 <div id="nav_overlay"></div>
+
 <script src="/js/navbar.js" async defer></script>
 
 

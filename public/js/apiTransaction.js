@@ -1,12 +1,14 @@
 
 // request movie
-function requestMovie(url, onComplete, onError) {
+function requestMovie(url, onComplete, handleAlert) {
     fetch(url)
         .then((res) => res.json())
         .then(data => {
             onComplete(data)
         })
-        .catch(onError)
+        .catch(err => {
+            handleAlert("Error Please Refresh!!", "danger")
+        })
 }
 
 //search movie
@@ -21,7 +23,7 @@ function getUpcomingMovie() {
     const path = '/api/movie/upcoming'
     const url = generateUrl(path);
     const render = renderMovie.bind({ container: upcomingContainer, title: 'Upcoming Movies' })
-    requestMovie(url, render, handleError);
+    requestMovie(url, render, handleAlert);
 }
 
 // top rated movies
@@ -29,7 +31,7 @@ function getTopRatedMovie() {
     const path = '/api/movie/top_rated'
     const url = generateUrl(path);
     const render = renderMovie.bind({ container: topContainer, title: 'Top Rated Movies' })
-    requestMovie(url, render, handleError);
+    requestMovie(url, render, handleAlert);
 }
 
 // most popular movies
@@ -37,6 +39,6 @@ function getPopularMovie() {
     const path = '/api/movie/popular'
     const url = generateUrl(path);
     const render = renderMovie.bind({ container: popularContainer, title: 'Popular Movies' })
-    requestMovie(url, render, handleError);
+    requestMovie(url, render, handleAlert);
 }
 

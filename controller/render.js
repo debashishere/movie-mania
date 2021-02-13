@@ -1,48 +1,55 @@
 
 module.exports = {
 
-    renderFavorite: (data, userName, res) => {
+    renderFavorite: (data, res) => {
 
+        const loggedUser = res.locals.loggedUser
         res.render('favorite', {
             title: 'favorite',
             style: 'favorite.css',
             navbar: true,
             footer: true,
             favorites: data,
-            username: userName
+            user: loggedUser
         })
 
     },
 
     renderHome: (res) => {
 
+        const loggedUser = res.locals.loggedUser
         res.render('home', {
             title: 'home',
             style: 'home.css',
             navbar: true,
-            footer: true
+            footer: true,
+            user: loggedUser
         })
 
     },
 
     renderExplore: (res) => {
 
+        const loggedUser = res.locals.loggedUser
         res.render('explore', {
             title: 'explore',
             style: 'explore.css',
             navbar: true,
             footer: true,
+            user: loggedUser
         })
 
     },
 
     renderAbout: (res) => {
 
+        const loggedUser = res.locals.loggedUser
         res.render('about', {
             title: 'about',
             style: 'about.css',
             navbar: true,
-            footer: true
+            footer: true,
+            user: loggedUser
         })
 
     },

@@ -31,48 +31,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 470px;
     margin: 0 auto;
-}
-
-.logout {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.logout p {
-    margin-right: 1.5rem;
-    color: rgb(112, 112, 112);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.logout p span {
-    color: rgb(15, 15, 15);
-    text-transform: capitalize;
-}
-
-#logout-btn {
-    padding: 6px 24px;
-    border-radius: 5px;
-    background-color: #fd3a69;
-    color: white;
-    font-size: 1rem;
-    padding: 0.4rem;
-    border: none;
-}
-
-#logout-btn:hover {
-    background-color: rgb(156, 25, 134);
 }
 
 .account-sec h3 {
     text-align: center;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #5c6e91;
 }
+
+.account-sec h3 span {
+    color: black;
+    font-size: 1.4;
+    text-transform: uppercase;
+}
+
 
 .fav-container {
     padding: 100px 0 30px 0;
@@ -213,7 +188,7 @@ body {
 .overlay-active {
     opacity: 1;
     pointer-events: all;
-    z-index: 20;
+    z-index: 30;
 }
 
 .modal-container {
@@ -291,7 +266,7 @@ body {
 .video-container div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: inherit;
     height: auto;
@@ -302,6 +277,13 @@ body {
 
 .video-container div iframe {
     margin: 1rem;
+    border: none;
+}
+
+.video-container p {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: bold;
 }
 
 .review-container {
@@ -314,14 +296,13 @@ body {
 
 .review-container h1 {
     width: 80%;
-    height: 2.5rem;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    padding: 5px;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 1rem;
-    padding-top: 0.3rem;
     background-color: #94b4a4;
-    color: #fae0df;
+    color: #202020;
     border-radius: 8px;
 }
 
@@ -351,21 +332,33 @@ body {
     font-size: 1rem;
 }
 
+.no_item {
+    width: 480px;
+    margin: 0 auto;
+    height: 80px;
+    border-radius: 5px;
+    color: #6b6a6a;
+    background-color: whitesmoke;
+    border: 1px solid rgb(214, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 607px) {
     .account-sec {
         width: 100%;
         padding: 0 1.5rem;
     }
-}
-
-@media screen and (max-width: 607px) {
 
     .account-sec {
         flex-direction: column;
         justify-content: center;
     }
 
-    .logout {
-        margin-top: 15px;
+    .no_item {
+        width: 100%;
     }
 }

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const api_key = `86f9a380ffae3c355aa19faaf111a15a`
 const baseUrl = `https://api.themoviedb.org/3`
 const axios = require('axios');
@@ -45,7 +46,6 @@ const getReviews = async (url) => {
 
     try {
         const result = await axios.get(url);
-        console.log('res', result.data);
         return result.data
     }
 
@@ -90,7 +90,6 @@ router.get('/movie/now_playing', async (req, res) => {
 router.get('/search/movie', async (req, res) => {
 
     try {
-        console.log('here')
         const term = req.query.term;
         const path = '/search/movie'
         const url = generateUrl(path) + '&query=' + term;
@@ -113,7 +112,6 @@ router.get('/movie/upcoming', async (req, res) => {
     try {
         const path = `/movie/upcoming`
         const url = generateUrl(path);
-        console.log('url', url)
         const resData = await requestMovie(url);
         const movies = resData.results
         res.status(200).send(movies);
@@ -133,7 +131,6 @@ router.get('/movie/top_rated', async (req, res) => {
     try {
         const path = `/movie/top_rated`
         const url = generateUrl(path);
-        console.log('url', url)
         const resData = await requestMovie(url);
         const movies = resData.results
         res.status(200).send(movies);
@@ -153,7 +150,6 @@ router.get('/movie/popular', async (req, res) => {
     try {
         const path = `/movie/popular`
         const url = generateUrl(path);
-        console.log('url', url)
         const resData = await requestMovie(url);
         const movies = resData.results
         res.status(200).send(movies);
