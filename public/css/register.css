@@ -26,7 +26,7 @@ body {
 
 .main-container {
     width: 100%;
-    margin-top: 75px;
+    margin-top: 70px;
 }
 
 .register-container {
@@ -110,6 +110,7 @@ body {
     justify-content: space-around;
     align-items: center;
     font-size: 1.1rem;
+    margin-top: 10px;
     width: 90%;
     height: 35px;
 }
@@ -119,11 +120,10 @@ body {
     background-color: rgb(219, 219, 38);
     border: 1px solid whitesmoke;
     color: black;
-    width: 30%;
+    padding: 4px 15px;
     font-size: 1.2rem;
     text-align: center;
     border-radius: 5px;
-    padding: 0.3rem
 }
 
 .login a:hover {
@@ -148,5 +148,9 @@ body {
 
     .register-container {
         width: 95%;
+    }
+
+    .login {
+        font-size: 0.95rem;
     }
 }

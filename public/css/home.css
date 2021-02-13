@@ -390,4 +390,20 @@ body {
         margin-right: 0;
     }
 
+    .banner-content h2 {
+        font-size: 2rem;
+    }
+
+    .banner-content p {
+        font-size: 0.95rem;
+        margin-top: 10px;
+    }
+
+    .banner-content a {
+        margin-top: 25px;
+    }
+
+    .call-text p {
+        font-size: 1.3rem;
+    }
 }

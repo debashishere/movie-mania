@@ -15,7 +15,7 @@ function requestMovie(url, onComplete, handleAlert) {
 function searchMovie(value) {
     const path = '/api/search/movie'
     const url = generateUrl(path) + '?term=' + value;
-    requestMovie(url, renderSearchMovie, handleError);
+    requestMovie(url, renderSearchMovie, handleAlert);
 }
 
 //up comming movies
