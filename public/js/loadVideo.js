@@ -14,7 +14,9 @@ function getVideos(movieId, videoContainer, showCloseBtn) {
     fetch(url)
         .then((res) => res.json())
         .then((data) => { createVideoTemplate(data, videoContainer, showCloseBtn) })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            console.log(err)
+        });
 }
 
 

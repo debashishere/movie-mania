@@ -9,7 +9,7 @@ header {
     left: 0;
     width: 100%;
     padding: 1rem 4.5rem;
-    z-index: 10;
+    z-index: 30;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,6 +47,31 @@ header.sticky .nav_left .logo {
 
 header.sticky .nav_left h2 {
     color: rgb(255, 60, 0);
+}
+
+header .nav_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .nav_right button {
+    border: none;
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-size: 0.80rem;
+    letter-spacing: normal;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    cursor: pointer;
+}
+
+header .nav_right button:focus {
+    outline: none;
+}
+
+header .nav_right button:hover {
+    background-color: black;
 }
 
 header .navigation {
@@ -91,6 +116,7 @@ header.sticky .navigation li a:hover {
     pointer-events: all;
 }
 
+
 @media (max-width: 1021px) {
     header {
         padding: 1rem 1.7rem;
@@ -112,7 +138,7 @@ header.sticky .navigation li a:hover {
 }
 
 
-@media (max-width: 635px) {
+@media (max-width: 683px) {
 
     header,
     header.sticky {
@@ -125,7 +151,7 @@ header.sticky .navigation li a:hover {
 
     header .navigation.active {
         position: fixed;
-        width: 280px;
+        width: 250px;
         height: 100vh;
         top: 72px;
         right: 0;
@@ -133,32 +159,38 @@ header.sticky .navigation li a:hover {
         flex-direction: column;
         align-items: center;
         background: #fff;
+        border-top: 1px solid rgb(218, 215, 215);
         padding-top: 25px;
         z-index: 30;
     }
 
+
+
     header .navigation li {
-        width: 200px;
-        background-color: whitesmoke;
-        border: 1px solid rgb(218, 215, 215);
-        border-radius: 5px;
+        /* width: 200px; */
+
     }
 
-    header .navigation li:hover {
-        background-color: rgb(224, 223, 223);
-        border: 1px solid rgb(192, 190, 190);
+    .logout_link {
+        width: auto;
+        background-color: white;
+        border: none;
+        border-radius: 0;
     }
 
-    header .navigation li:hover a {
-        color: rgb(255, 60, 0);
-    }
+    header .navigation li:hover {}
+
+    header .navigation li:hover a {}
 
     header .navigation li:not(:first-child) {
         margin-top: 10px;
     }
 
     header .navigation li a {
-        font-family: 'Poppins', sans-serif;
+        width: 190px;
+        background-color: whitesmoke;
+        border: 1px solid rgb(218, 215, 215);
+        border-radius: 5px;
         display: inline-block;
         font-weight: 700;
         color: #111;
@@ -166,8 +198,20 @@ header.sticky .navigation li a:hover {
         padding: 6px 0 6px 10px;
     }
 
+    header .navigation li a:hover {
+        color: rgb(255, 60, 0);
+        background-color: rgb(224, 223, 223);
+        border: 1px solid rgb(192, 190, 190);
+    }
+
     header .navigation li:not(:last-child) {
         margin-right: 0;
+    }
+
+    .logout_link {
+        width: auto;
+        border: none;
+        background-color: white;
     }
 
     .menuToggle {
@@ -183,7 +227,7 @@ header.sticky .navigation li a:hover {
 
     .menuToggle.active {
         background: url(../images/close.png);
-        background-size: 25px;
+        background-size: 23px;
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -191,5 +235,12 @@ header.sticky .navigation li a:hover {
     header.sticky .menuToggle {
         filter: invert(1);
     }
+
+    header .nav_right button {
+        font-size: 0.95rem;
+        padding: 4px 8px;
+        margin-top: 15px;
+    }
+
 
 }

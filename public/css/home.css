@@ -14,7 +14,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgb(216, 216, 216);
+    background-color: whitesmoke;
+    /* rgb(216, 216, 216); */
 }
 
 ::-webkit-scrollbar {
@@ -168,8 +169,10 @@ body {
 
 .now_playing_title {
     width: 1080px;
-    background-color: #fff;
     padding: 20px 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(238, 238, 238);
+    background-color: #fff;
 }
 
 .now-playing-container .now_playing_title h3 {
@@ -205,7 +208,7 @@ body {
     border-radius: 5px;
     overflow: hidden;
     background-color: white;
-    border: 1px solid rgb(218, 215, 215);
+    border: 1px solid rgb(238, 238, 238);
 }
 
 

@@ -55,7 +55,7 @@ function createTemplate(movies) {
 
 // on error 
 function handleError(error) {
-    console.log(error)
+    // console.log(error)
 }
 
 

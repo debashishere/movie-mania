@@ -188,7 +188,7 @@ form {
     color: rgb(252, 123, 101);
     opacity: 0.9;
     transition: 250ms all;
-    z-index: 10;
+    z-index: 5;
 }
 
 .fev-logo:hover {
@@ -346,6 +346,43 @@ form {
     margin-bottom: 2rem;
 }
 
+#alert {
+    position: fixed;
+    padding: 3px 8px;
+    right: 30px;
+    top: 105px;
+    background-color: rgb(160, 245, 188);
+    color: rgb(1, 32, 11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1.5px solid #24e40a;
+    font-size: 0.80rem;
+    font-weight: bold;
+    z-index: 1000;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+#alert.active {
+    transform: scale(1);
+}
+
+#alert.success {
+    background-color: rgb(190, 253, 211);
+    color: rgb(1, 32, 11);
+    border: 1.5px solid #24e40a;
+    box-shadow: 2px 2px 2px 2px rgb(186, 231, 229);
+}
+
+#alert.danger {
+    background-color: rgb(255, 223, 214);
+    color: rgb(180, 22, 11);
+    border: 1.5px solid #e64708;
+    box-shadow: 2px 2px 5px 3px rgb(253, 174, 143);
+}
+
 @media screen and (max-width: 1085px) {
     #modal_container {
         width: 65%;
@@ -371,6 +408,12 @@ form {
     }
 }
 
+@media screen and (max-width: 1220px) {
+    #alert {
+        top: 147px;
+        right: 30px;
+    }
+}
 
 @media screen and (max-width: 792px) {
     #search-input {

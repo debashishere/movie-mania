@@ -51,10 +51,8 @@ function removeFavorite(movieId) {
                 // unable to delete
             }
         })
-        .catch(err =>
-            console.log(err)
-            // unable to delete
-        )
+        .catch(err => { })
+
 }
 
 
@@ -91,7 +89,13 @@ function getReviews(movieId, reviewContainer) {
     fetch(url)
         .then(res => res.json())
         .then(data => createReviewTemplate(data, reviewContainer))
+<<<<<<< HEAD
         .catch(err => console.log(err))
+=======
+        .catch(err => {
+            //  console.log(err)
+        })
+>>>>>>> secureapi
 }
 
 function createReviewTemplate(data, reviewContainer) {

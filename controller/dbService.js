@@ -3,10 +3,10 @@ const { resolve } = require('path');
 
 // creaet connection
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
-    database: 'movies',
+    database: process.env.DATABASE,
 
 })
 

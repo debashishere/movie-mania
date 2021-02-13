@@ -4,17 +4,17 @@
 
     <div class="fav-container">
         <div class="account-sec">
-            <h3>Favourite Movies</h3>
-            <div class="logout">
-                <p>Hello <span>{{username}}</span></p>
-                <form action="/account/logout?_method=DELETE" method="POST">
-                    <button type="submit" id="logout-btn">Log out</button>
-                </form>
-            </div>
+            <h3>Hello <span>{{user.name}}</span> </h3>
+            <h3>Your Favourite Movies</h3>
         </div>
 
         <div class="fav-content">
 
+            {{#unless favorites}}
+            <div class="no_item">
+                <p>You haven't added any movie yet!</p>
+            </div>
+            {{/unless}}
             {{!-- single favuorite item --}}
             {{#each favorites as |movie| }}
             <div class="fav-item">

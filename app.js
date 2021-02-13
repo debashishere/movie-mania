@@ -16,6 +16,7 @@ const initializePassport = require('./config/passport-config');
 const logger = require('morgan');
 
 const app = express();
+app.set('trust proxy', 1);
 
 app.use(logger('dev'));
 
@@ -52,10 +53,15 @@ app.use(methodOverride('_method'));
 
 //Global variables
 app.use((req, res, next) => {
+
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    const loggedUser = req.user || null
+    res.locals.loggedUser = loggedUser;
     next();
+
 })
+
 
 //******----------View-------***********
 // handlebars

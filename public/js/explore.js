@@ -1,18 +1,18 @@
 
-const posterPrefix = 'https://image.tmdb.org/t/p/w500'
 
 //Select DOM Element 
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
 const movieSection = document.querySelector('.movie-section');
-
 const upcomingContainer = document.querySelector('.upcoming-container');
 const popularContainer = document.querySelector('.popular-container');
 const topContainer = document.querySelector('.top-container');
-
 const overlay = document.getElementById('overlay');
 const modalContainer = document.getElementById('modal_container');
 const modalContent = document.getElementById('modal_content');
+const alert = document.getElementById('alert');
+
+const posterPrefix = 'https://image.tmdb.org/t/p/w500'
 
 function renderSearchMovie(data) {
     movieSection.innerHTML = ''
@@ -21,28 +21,45 @@ function renderSearchMovie(data) {
     movieSection.appendChild(movieBlock);
 }
 
+
+
 function renderMovie(data) {
+
     const movieBlock = createMovieContainer(data);
     const heading = document.createElement('h3')
     heading.textContent = this.title
     this.container.appendChild(heading);
     this.container.appendChild(movieBlock);
+
 }
 
 
-function handleError(error) {
-    console.log(error);
+function handleAlert(message, code) {
+
+    alert.innerHTML = `<p>${message}</p>`
+    alert.classList.add(`${code}`);
+    alert.classList.add('active');
+    setTimeout(() => {
+        alert.classList.remove('active');
+    }, 2000)
+
 }
 // fetch for search
 searchBtn.onclick = function (event) {
+
     event.preventDefault;
     const searchValue = searchInput.value;
     searchMovie(searchValue);
     searchInput.value = '';
+
 }
 
 // create movie cards
 function createMovieContainer(movie) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> secureapi
     const movieContainer = document.createElement('div');
     movieContainer.setAttribute('class', 'movie-container');
     movie.forEach((item) => {
@@ -70,10 +87,12 @@ function createMovieContainer(movie) {
     })
     slider(movieContainer);
     return movieContainer;
+
 }
 
 // filter movie data
 function filterData(item) {
+
     const newItem = {};
     if (item.original_title) {
         newItem.original_title = item.original_title
@@ -82,8 +101,8 @@ function filterData(item) {
     }
     newItem.release_year = item.release_date.slice(0, 4)
     newItem.id = item.id;
-
     return newItem;
+
 }
 
 // toggle video section on click
@@ -112,6 +131,7 @@ document.onclick = function (event) {
 
 // get movie card data to db
 function getMovieCard(target) {
+
     const logoDiv = target.parentElement;
     const imgDiv = logoDiv.nextElementSibling;
     const img = imgDiv.children[0];
@@ -122,12 +142,13 @@ function getMovieCard(target) {
     const details = detailsContent.children;
     const title = details[0].textContent;
     const year = details[1].textContent;
-
     postMovieCard(imagePath, movieId, title, year);
+
 }
 
 
 function postMovieCard(imagePath, movieId, title, year) {
+
     let data = {
         imagePath: imagePath,
         movieId: movieId,
@@ -146,25 +167,23 @@ function postMovieCard(imagePath, movieId, title, year) {
 
             if (res.status == 200) {
                 //created
+                handleAlert("movie Add to your favorite list", "success")
             }
             else if (res.status == 401) {
-                console.log("unauthenticated")
+                handleAlert("Please Login to create favorite list", "danger")
             }
         })
-        .catch(err => console.log(err))
-}
+        .catch(err => {
+            handleAlert("Error occured ! Please try again", "danger")
+        })
 
-
-// show alert
-function showAlert(text) {
-    console.log(text)
 }
 
 function slider(movieContainer) {
+
     let isDown = false;
     let startX;
     let scrollLeft;
-
     movieContainer.addEventListener('mousedown', (event) => {
         isDown = true;
         startX = event.pageX - movieContainer.offsetLeft;
@@ -186,6 +205,7 @@ function slider(movieContainer) {
         const slide = (x - startX) * 3.5;
         movieContainer.scrollLeft = scrollLeft - slide;
     })
+
 }
 
 
