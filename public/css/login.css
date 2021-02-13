@@ -15,7 +15,6 @@ body {
 
 .main-container {
     width: 100%;
-    height: 100vh;
 }
 
 .login-container {
@@ -24,8 +23,8 @@ body {
     align-items: center;
     width: 500px;
     margin: 0 auto;
-    padding-top: 109.5px;
-    padding-bottom: 40px;
+    padding-top: 118.5px;
+    padding-bottom: 54px;
 }
 
 .login-content {
