@@ -2,7 +2,7 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-container');
 const videoContainer = document.querySelector('.video-container');
 const modalClose = document.getElementById('modal-close');
-const baseUrl = `http://localhost:3000`
+const baseUrl = `https://fav-movie-mania.herokuapp.com`
 
 
 const logoutBtn = document.getElementById('logout-btn');
