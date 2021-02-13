@@ -67,6 +67,7 @@ router
 router
     .route('/logout')
     .delete((req, res) => {
+        req.session.cookie.expires = 30 * 1000 // 30 sec after logout
         req.logout();
         res.redirect('/');
     })

@@ -10,10 +10,10 @@ const api = require('./routes/api');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const flash = require('express-flash');
-const session = require('express-session');
 const methodOverride = require('method-override');
 const initializePassport = require('./config/passport-config');
 const logger = require('morgan');
+const session = require('express-session');
 
 const app = express();
 app.set('trust proxy', 1);
@@ -34,14 +34,20 @@ app.use(function (req, res, next) {
     next();
 });
 
-//*********-------Passport-----***********
+const sessionStore = require('./config/session-config');
+
 app.use(session({
-    //key to encrypt all info
+
+    key: process.env.COOKIE_NAME,
     secret: process.env.SESSION_SECRET,
-    // resave session variables if nothing is changed
+    store: sessionStore,
+    saveUninitialized: false,
     resave: false,
-    // save empty value in the session
-    saveUninitialized: false
+    cookie: {
+        secure: false,
+        httpOnly: true,
+        maxAge: 60 * 60 * 1000 // 1 hr
+    },
 
 }))
 
