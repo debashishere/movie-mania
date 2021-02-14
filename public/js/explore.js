@@ -13,7 +13,7 @@ const modalContent = document.getElementById('modal_content');
 const alert = document.getElementById('alert');
 
 const posterPrefix = 'https://image.tmdb.org/t/p/w500'
-const baseUrl = `http://localhost:3000`
+const baseUrl = ``
 
 function renderSearchMovie(data) {
     movieSection.innerHTML = ''
