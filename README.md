@@ -1,4 +1,4 @@
-# Project Name : Movie-Mania
+# Project Name : Movie-Mania  <a href="https://fav-movie-mania.herokuapp.com/">Visit</a> 
 ## Description
 - Session based user authentication, used MySQLStore as session store.
 - Mysql as the database.
