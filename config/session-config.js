@@ -18,4 +18,5 @@ var options = {
 var sessionStore = new MySQLStore(options, connection);
 
 
+
 module.exports = sessionStore;
